@@ -18,7 +18,7 @@
 * **좌표 및 각도 추출**: `CogPMAlignTool`을 활용하여 제품의 중심점(X, Y)과 회전 각도를 정밀하게 산출하며, 이는 로봇의 Picking 공정 데이터로 연동됩니다.
 * **제품 분류 (상/하 및 앞/뒷면)**: 앰플 조립 시 조립 방향을 결정짓는 형상적 특징(Hole, 단차 등)을 분석하여 제품의 방향성을 판별합니다. <br>
 
-<프로그램 이미지  출처 : 밀리세컨즈>
+<프로그램 이미지  출처 : 밀리세컨즈> <br>
 <img width="459" height="131" alt="image" src="https://github.com/user-attachments/assets/23bbcf52-d7e6-4457-91ff-186c9cccb02b" />
 
 <br>
