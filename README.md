@@ -55,7 +55,7 @@
 이미지 분석을 통해 제품의 좌표 및 각도를 검출하고, 중앙 홀의 존재 여부와 각인 상태를 확인하여 최종 결과를 도출합니다.
 
 <전체 계층구조>
-<br>
+<br><br>
 <img width="283" height="588" alt="image" src="https://github.com/user-attachments/assets/1957e13c-5057-44cb-926b-09bc8b077e4c" /> <br>
 
 <결과 이미지>
