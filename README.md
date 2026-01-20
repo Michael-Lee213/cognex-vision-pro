@@ -10,7 +10,7 @@
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d5c0cdcf-8a8a-4b8a-945f-5042cdfc15d6" width="80%" alt="제품이미지">
   <br>
-  <sub>이미지 출처 : Demillion</sub>
+  <sub>bush 이미지 출처 : Demillion</sub>
 </p>
 
 <br>
@@ -30,7 +30,7 @@
 <p align="center">
   <img src="https://github.com/user-attachments/assets/23bbcf52-d7e6-4457-91ff-186c9cccb02b" width="80%" alt="프로그램 이미지">
   <br>
-  <sub>이미지 출처 : 밀리세컨드</sub>
+  <sub>vision pro 이미지 출처 : 밀리세컨드</sub>
 </p>
 
 <br>
