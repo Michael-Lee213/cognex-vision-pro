@@ -54,12 +54,11 @@
 ## 5. Result Analysis (Screenshots)
 이미지 분석을 통해 제품의 좌표 및 각도를 검출하고, 중앙 홀의 존재 여부와 각인 상태를 확인하여 최종 결과를 도출합니다.
 
-<전체 계층구조>
+<전체 계층구조><br>
 <img width="283" height="588" alt="image" src="https://github.com/user-attachments/assets/1957e13c-5057-44cb-926b-09bc8b077e4c" /> <br>
 
-<결과 이미지>
-
-
+<결과 이미지><br>
+<img width="536" height="231" alt="image" src="https://github.com/user-attachments/assets/1302e337-4837-4b55-ad58-7e5e8c7dfa09" />
 
 <br>
 
