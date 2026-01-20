@@ -36,12 +36,10 @@
 <br>
 
 ## 3. Implementation Details
-* **DLL-Based Logic Integration**: `Cognex.VisionPro.PMAlign.dll` 등 핵심 라이브러리를 참조하여, `.vpp` 파일 내 알고리즘 객체를 C#에서 실시간 런타임 객체로 변환하여 제어합니다.
-* **Dynamic Tool Extraction via Reflection**: `CogSerializer`를 통해 로드된 객체 계층(ToolGroup, Job 등)에 관계없이 리플렉션을 사용하여 필요한 비전 툴을 동적으로 추출함으로써 유지보수성을 극대화했습니다.
-* **Hybrid Inspection Architecture**: 
-  - **VisionPro Engine**: `CogBlobTool`을 이용한 고정밀 형상 및 면적 분석 수행.
-  - **Direct Pixel Access**: `BrightnessAnalyzer`를 통해 비트맵 픽셀 데이터에 직접 접근하여 처리 속도를 최적화하는 하이브리드 검사 체계를 구축했습니다.
-* **Advanced Error Handling**: Segmentation 설정 시 버전별로 상이한 `ConnectivityMode`(EightConnected/Grey8Connected)를 리플렉션으로 체크하는 방어적 프로그래밍을 적용했습니다.
+* VPP 기반 패턴 데이터 추출: 사전에 학습된 train_PMAlign.vpp 파일을 로드하여 테스트 이미지 내 제품의 특징을 탐색합니다. 학습된 패턴을 바탕으로 제품의 정확한 위치(X, Y)와 회전 각도를 실시간으로 따와서 후속 분석의 기준점으로 활용합니다.
+* 지능형 툴 로딩 (Dynamic Extraction): 비전 설정 파일(.vpp) 내부의 저장 방식(단독 저장, 그룹화 저장 등)에 상관없이, 실행 시점에 파일 내부를 스스로 탐색하여 필요한 툴을 찾아내는 리플렉션(Reflection) 로직을 구현했습니다. 이를 통해 파일 내부 구조가 변경되어도 코드 수정 없이 대응이 가능합니다.
+* Adaptive Feature Analysis (유동적 ROI): 패턴 매칭으로 찾은 좌표에 맞춰 검사 영역(ROI)을 동적으로 이동시켜 배치합니다. 이후 CogBlobTool을 사용하여 중앙 홀의 면적을 계산하거나 각인 상태를 분석하여 제품의 상태를 최종 판정합니다.
+* DLL 직접 제어 및 하이브리드 검사: Cognex 핵심 라이브러리(DLL)를 직접 참조하여 툴 파라미터를 제어합니다. VisionPro 엔진의 분석 결과와 BrightnessAnalyzer를 통한 직접적인 픽셀 데이터 접근 방식을 결합하여 판독의 신뢰성과 처리 속도를 동시에 확보했습니다.
 
 <br>
 
@@ -56,12 +54,12 @@
 ## 5. Result Analysis (Screenshots)
 이미지 분석을 통해 제품의 좌표 및 각도를 검출하고, 중앙 홀의 존재 여부와 각인 상태를 확인하여 최종 결과를 도출합니다.
 
-<br>
+<전체 계층구조>
+<img width="283" height="588" alt="image" src="https://github.com/user-attachments/assets/1957e13c-5057-44cb-926b-09bc8b077e4c" /> <br>
 
-<p align="center">
-  <img src="./docs/pma_sample.png" width="45%" title="Object Detection" alt="PMA Result">
-  <img src="./docs/blob_sample.png" width="45%" title="Classification" alt="Blob Result">
-</p>
+<결과 이미지>
+
+
 
 <br>
 
